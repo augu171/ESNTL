@@ -1,6 +1,5 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_video_player.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart'
     as smooth_page_indicator;
 import 'package:flutter/material.dart';
@@ -41,7 +40,7 @@ class _CmrPulseCardWidgetState extends State<CmrPulseCardWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: MediaQuery.sizeOf(context).height * 0.325,
+      height: MediaQuery.sizeOf(context).height * 0.33,
       child: Stack(
         children: [
           Padding(
@@ -61,7 +60,7 @@ class _CmrPulseCardWidgetState extends State<CmrPulseCardWidget> {
                     ),
                   ),
                   child: Padding(
-                    padding: EdgeInsets.all(10.0),
+                    padding: EdgeInsets.all(9.0),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       children: [
@@ -82,7 +81,9 @@ class _CmrPulseCardWidgetState extends State<CmrPulseCardWidget> {
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Text(
-                                        'CMR PULSE',
+                                        FFLocalizations.of(context).getText(
+                                          'kd2kd0mx' /* CMR PULSE */,
+                                        ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
@@ -107,7 +108,9 @@ class _CmrPulseCardWidgetState extends State<CmrPulseCardWidget> {
                                             ),
                                       ),
                                       Text(
-                                        ' | WEEK 08-26',
+                                        FFLocalizations.of(context).getText(
+                                          'dclg7quc' /*  | WEEK 08-26 */,
+                                        ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
@@ -134,7 +137,9 @@ class _CmrPulseCardWidgetState extends State<CmrPulseCardWidget> {
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 4.0, 0.0, 0.0),
                                     child: Text(
-                                      'Curated weekly highlights',
+                                      FFLocalizations.of(context).getText(
+                                        '1m58ql61' /* Curated weekly highlights */,
+                                      ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
@@ -177,8 +182,7 @@ class _CmrPulseCardWidgetState extends State<CmrPulseCardWidget> {
                               27.0, 13.0, 27.0, 0.0),
                           child: Container(
                             decoration: BoxDecoration(
-                              color:
-                                  FlutterFlowTheme.of(context).blackBackground,
+                              color: Color(0xFF3B3B3B),
                               borderRadius: BorderRadius.circular(6.0),
                               border: Border.all(
                                 color:
@@ -192,17 +196,21 @@ class _CmrPulseCardWidgetState extends State<CmrPulseCardWidget> {
                                 Expanded(
                                   child: Container(
                                     decoration: BoxDecoration(
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryBackground,
+                                      borderRadius: BorderRadius.only(
+                                        topLeft: Radius.circular(6.0),
+                                        bottomLeft: Radius.circular(6.0),
+                                      ),
                                     ),
-                                    child: FlutterFlowVideoPlayer(
-                                      path: 'assets/videos/video_corazon.mp4',
-                                      videoType: VideoType.asset,
-                                      autoPlay: true,
-                                      looping: true,
-                                      showControls: false,
-                                      allowFullScreen: false,
-                                      allowPlaybackSpeedMenu: false,
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.only(
+                                        topLeft: Radius.circular(6.0),
+                                        bottomLeft: Radius.circular(6.0),
+                                      ),
+                                      child: Image.asset(
+                                        'assets/images/test_gif.gif',
+                                        height: 150.0,
+                                        fit: BoxFit.cover,
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -213,7 +221,8 @@ class _CmrPulseCardWidgetState extends State<CmrPulseCardWidget> {
                                       borderRadius: BorderRadius.circular(8.0),
                                       child: Image.asset(
                                         'assets/images/imagen_corazon_2.png',
-                                        fit: BoxFit.cover,
+                                        height: 150.0,
+                                        fit: BoxFit.fitHeight,
                                       ),
                                     ),
                                   ),
@@ -224,7 +233,7 @@ class _CmrPulseCardWidgetState extends State<CmrPulseCardWidget> {
                         ),
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
-                              27.0, 9.0, 27.0, 0.0),
+                              27.0, 8.0, 27.0, 0.0),
                           child: Container(
                             height: 22.0,
                             decoration: BoxDecoration(
@@ -234,7 +243,9 @@ class _CmrPulseCardWidgetState extends State<CmrPulseCardWidget> {
                             child: Align(
                               alignment: AlignmentDirectional(0.0, 0.0),
                               child: Text(
-                                'Chronic ischemic remodeling',
+                                FFLocalizations.of(context).getText(
+                                  'dd45ppgt' /* Chronic ischemic remodeling */,
+                                ),
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(

@@ -1,4 +1,5 @@
 import '/flutter_flow/flutter_flow_util.dart';
+import '/global_components/gradient_background/gradient_background_widget.dart';
 import '/init/components/sign_in_login_logo/sign_in_login_logo_widget.dart';
 import '/index.dart';
 import 'sign_up_widget.dart' show SignUpWidget;
@@ -7,6 +8,8 @@ import 'package:flutter/material.dart';
 class SignUpModel extends FlutterFlowModel<SignUpWidget> {
   ///  State fields for stateful widgets in this page.
 
+  // Model for Gradient_Background component.
+  late GradientBackgroundModel gradientBackgroundModel;
   // Model for SignIn_Login_Logo component.
   late SignInLoginLogoModel signInLoginLogoModel;
   // State field(s) for emailTxt widget.
@@ -26,6 +29,8 @@ class SignUpModel extends FlutterFlowModel<SignUpWidget> {
 
   @override
   void initState(BuildContext context) {
+    gradientBackgroundModel =
+        createModel(context, () => GradientBackgroundModel());
     signInLoginLogoModel = createModel(context, () => SignInLoginLogoModel());
     passTxtVisibility = false;
     coPassTxtVisibility = false;
@@ -33,6 +38,7 @@ class SignUpModel extends FlutterFlowModel<SignUpWidget> {
 
   @override
   void dispose() {
+    gradientBackgroundModel.dispose();
     signInLoginLogoModel.dispose();
     emailTxtFocusNode?.dispose();
     emailTxtTextController?.dispose();

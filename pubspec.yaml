@@ -34,8 +34,15 @@ dependencies:
   chewie: 1.11.3
   collection: 1.19.1
   csslib: 1.0.2
+  csv: 6.0.0
   flutter_animate: 4.5.0
   flutter_cache_manager: 3.4.1
+  flutter_secure_storage: 10.0.0-beta.4
+  flutter_secure_storage_linux: 2.0.1
+  flutter_secure_storage_macos: 4.0.0
+  flutter_secure_storage_platform_interface: 2.0.1
+  flutter_secure_storage_web: 2.0.0
+  flutter_secure_storage_windows: 4.0.0
   flutter_svg: 2.1.0
   font_awesome_flutter: 10.7.0
   from_css_color: 2.0.0
@@ -44,6 +51,7 @@ dependencies:
   html: 0.15.6
   intl: 0.20.2
   json_path: 0.7.2
+  observer:
   page_transition: 2.1.0
   path_provider: 2.1.4
   path_provider_android: 2.2.10
@@ -64,6 +72,7 @@ dependencies:
   sqflite: 2.3.3+1
   sqflite_common: 2.5.4+3
   stop_watch_timer: 3.0.2
+  synchronized: 3.4.0
   timeago: 3.7.1
   url_launcher: 6.3.1
   url_launcher_android: 6.3.16
@@ -90,10 +99,22 @@ dependency_overrides:
   uuid: ^4.0.0
 
 dev_dependencies:
+  flutter_launcher_icons: 0.13.1
   flutter_lints: 4.0.0
+  image: 4.2.0
   lints: 4.0.0
   flutter_test:
     sdk: flutter
+
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  remove_alpha_ios: true
+  web:
+    generate: true
+  image_path: 'assets/images/app_launcher_icon.png'
+
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -140,6 +161,12 @@ flutter:
     - family: TablerIcons
       fonts:
         - asset: assets/fonts/TablerIcons.ttf
+    - family: CustomIcons
+      fonts:
+        - asset: assets/fonts/CustomIcons.ttf
+    - family: CustomIcons2
+      fonts:
+        - asset: assets/fonts/CustomIcons2.ttf
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

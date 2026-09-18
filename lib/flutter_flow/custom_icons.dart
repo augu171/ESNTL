@@ -4,6 +4,8 @@ class FFIcons {
   FFIcons._();
 
   static const String _tablerIconsFamily = 'TablerIcons';
+  static const String _customIconsFamily = 'CustomIcons';
+  static const String _customIcons2Family = 'CustomIcons2';
 
   // TablerIcons
   static const IconData kad2 = IconData(0xe900, fontFamily: _tablerIconsFamily);
@@ -7506,4 +7508,13 @@ class FFIcons {
   static const IconData kzzz = IconData(0xf7ca, fontFamily: _tablerIconsFamily);
   static const IconData kzzzOff =
       IconData(0xf7cb, fontFamily: _tablerIconsFamily);
+
+  // CustomIcons
+  static const IconData ksavedSearch =
+      IconData(0xe800, fontFamily: _customIconsFamily);
+  static const IconData kemergencyHome =
+      IconData(0xe801, fontFamily: _customIconsFamily);
+
+  // CustomIcons2
+  static const IconData krg = IconData(0xe802, fontFamily: _customIcons2Family);
 }

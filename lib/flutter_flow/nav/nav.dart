@@ -3,6 +3,8 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '/backend/schema/structs/index.dart';
+
 import '/flutter_flow/flutter_flow_util.dart';
 
 import '/index.dart';
@@ -51,9 +53,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => LoadScreenWidget(),
         ),
         FFRoute(
-          name: InitWidget.routeName,
-          path: InitWidget.routePath,
-          builder: (context, params) => InitWidget(),
+          name: WelcomeWidget.routeName,
+          path: WelcomeWidget.routePath,
+          builder: (context, params) => WelcomeWidget(),
         ),
         FFRoute(
           name: SignUpWidget.routeName,
@@ -68,10 +70,89 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: HomeWidget.routeName,
           path: HomeWidget.routePath,
-          builder: (context, params) => HomeWidget(),
+          builder: (context, params) => HomeWidget(
+            pButtonPressed: params.getParam(
+              'pButtonPressed',
+              ParamType.int,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: ProtocolWidget.routeName,
+          path: ProtocolWidget.routePath,
+          builder: (context, params) => ProtocolWidget(),
+        ),
+        FFRoute(
+          name: TestScreenWidget.routeName,
+          path: TestScreenWidget.routePath,
+          builder: (context, params) => TestScreenWidget(),
+        ),
+        FFRoute(
+          name: InfoWidget.routeName,
+          path: InfoWidget.routePath,
+          builder: (context, params) => InfoWidget(
+            isLog: params.getParam(
+              'isLog',
+              ParamType.bool,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: InfoAltWidget.routeName,
+          path: InfoAltWidget.routePath,
+          builder: (context, params) => InfoAltWidget(
+            dotValueParameter: params.getParam(
+              'dotValueParameter',
+              ParamType.int,
+            ),
+            isLogged: params.getParam(
+              'isLogged',
+              ParamType.bool,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: LocsWidget.routeName,
+          path: LocsWidget.routePath,
+          builder: (context, params) => LocsWidget(),
+        ),
+        FFRoute(
+          name: ViWidget.routeName,
+          path: ViWidget.routePath,
+          builder: (context, params) => ViWidget(
+            dotParameter: params.getParam(
+              'dotParameter',
+              ParamType.int,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: CineSaxWidget.routeName,
+          path: CineSaxWidget.routePath,
+          builder: (context, params) => CineSaxWidget(
+            dotParameter: params.getParam(
+              'dotParameter',
+              ParamType.int,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: AortaWidget.routeName,
+          path: AortaWidget.routePath,
+          builder: (context, params) => AortaWidget(),
+        ),
+        FFRoute(
+          name: EsencialWidget.routeName,
+          path: EsencialWidget.routePath,
+          builder: (context, params) => EsencialWidget(),
+        ),
+        FFRoute(
+          name: TopografiaWidget.routeName,
+          path: TopografiaWidget.routePath,
+          builder: (context, params) => TopografiaWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
-      observers: [routeObserver],
+      observers: ffNavigatorObservers,
     );
 
 extension NavParamExtensions on Map<String, String?> {
@@ -141,6 +222,7 @@ class FFParameters {
     String paramName,
     ParamType type, {
     bool isList = false,
+    StructBuilder<T>? structBuilder,
   }) {
     if (futureParamValues.containsKey(paramName)) {
       return futureParamValues[paramName];
@@ -158,6 +240,7 @@ class FFParameters {
       param,
       type,
       isList,
+      structBuilder: structBuilder,
     );
   }
 }
